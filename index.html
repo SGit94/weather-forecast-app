@@ -4,15 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather Forecast App</title>
-  <link href="./src/output.css" rel="stylesheet" /> <!-- Tailwind CLI output -->
-</head>
-<body class="bg-blue-50 min-h-screen flex items-center justify-center px-4">
 
-  <main class="max-w-xl w-full bg-white rounded-xl shadow-lg p-6 space-y-6">
-    <!-- App Title -->
+  <!-- Tailwind CSS output -->
+  <link href="./src/output.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="fav.png" />
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col justify-between">
+
+  <!-- Main Weather Container -->
+  <main class="max-w-xl w-full mx-auto bg-white rounded-xl shadow-lg p-6 space-y-6 flex-1">
+    <!-- Header Section -->
     <h1 class="text-3xl font-bold text-center text-blue-700">🌦️ Weather Forecast</h1>
 
-    <!-- Search + Geolocation Section -->
+    <!-- Search Area -->
     <section class="flex flex-col sm:flex-row sm:items-center gap-4">
       <input
         type="text"
@@ -20,14 +26,12 @@
         placeholder="Enter city name"
         class="flex-1 border border-gray-300 rounded-md p-2 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />
-
       <button
         id="searchButton"
         class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
       >
         🔍 Search
       </button>
-
       <button
         id="locationButton"
         class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
@@ -36,37 +40,45 @@
       </button>
     </section>
 
-    <!-- Recent Cities Dropdown (initially hidden) -->
+    <!-- Recent Cities Dropdown -->
     <section id="recentCitiesContainer" class="hidden">
       <label for="recentCitiesDropdown" class="block text-sm text-gray-600 mb-1">Recent Searches:</label>
       <select
         id="recentCitiesDropdown"
         class="w-full border p-2 rounded-md text-gray-700 bg-white"
       >
-        <!-- Options injected via JS -->
+        <!-- JS will populate options -->
       </select>
     </section>
 
-    <!-- Current Weather Display -->
+    <!-- Current Weather -->
     <section id="currentWeather" class="text-center space-y-2">
       <p class="text-lg text-gray-700 italic">Current weather will appear here</p>
     </section>
 
-    <!-- Forecast Cards -->
+    <!-- Forecast Grid -->
     <section id="forecast" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <!-- Forecast cards injected via JS -->
+      <!-- JS will inject forecast cards -->
     </section>
 
-    <!-- Error Display -->
+    <!-- Error Handling -->
     <section
       id="error"
       class="hidden bg-red-100 text-red-700 p-3 rounded-md text-center font-semibold"
     >
-      <!-- Error messages injected via JS -->
+      <!-- JS will insert error messages -->
     </section>
   </main>
 
-  <!-- Link to JS file -->
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-600 py-4">
+    <p>
+      Developed by <strong>Sanju Halder</strong> |
+      <a href="mailto:sanju@example.com" class="text-blue-600 hover:underline">Contact us</a>
+    </p>
+  </footer>
+
+  <!-- Script Integration -->
   <script src="./script.js"></script>
 </body>
 </html>
